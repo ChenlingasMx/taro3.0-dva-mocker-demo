@@ -30,20 +30,29 @@ const customInterceptor = (chain) => {
       const msg = res.data.message.toString();
 
       if (res.data.tokens) {
-        //localStorage.setItem("xAuthToken", response.data.tokens.token+' '+response.data.tokens.refesh_token);
+        try {
+          Taro.setStorageSync('xAuthToken', response.data.tokens.token + ' ' + response.data.tokens.refesh_token);
+        } catch (e) {
+          Taro.showToast({ title: '登录信息存储失败', icon: "none" })
+        }
       }
       if (error === '-1' || error === '0') {
+        pageToLogin()
         return res.data;
       }
       if (error === '-99' || error === '-96') {
-        localStorage.removeItem("xAuthToken")
-        setTimeout(() => {
+        Taro.showToast({ title: msg, icon: "none" })
+        try {
+          Taro.removeStorageSync('xAuthToken')
+          //跳转到登录页面
           //window.location.href = '/'
-        }, 1000);
+        } catch (e) {
+          //Taro.showToast({ title: '登录信息删除失败', icon: "none" })
+        }
         return;
       }
       //弹出错误信息
-      //
+      Taro.showToast({ title: msg, icon: "none" })
       return;
     }
   })

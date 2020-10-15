@@ -20,7 +20,7 @@ class Index extends Component {
     console.log(this.props)
     return (
       <View className='index'>
-        <Text>Hello login!</Text>
+        <Text>Hello user center!</Text>
       </View>
     )
   }

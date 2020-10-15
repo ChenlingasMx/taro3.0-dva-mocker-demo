@@ -22,6 +22,7 @@ class App extends Component {
     // this.props.children 是将要会渲染的页面
 
     render() {
+    console.log(this.props)
         return (
             <Provider store={store}>
                 {this.props.children}

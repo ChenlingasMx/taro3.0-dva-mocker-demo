@@ -1,3 +1,4 @@
+import Taro from "@tarojs/taro"
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
@@ -26,6 +27,9 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  goto=()=>{
+    Taro.navigateTo({url:'/pages/account/login/index'})
+  }
   render () {
     if(this.props.loading.effects['index/userLoginCode']!==false){
       return <View className='index'>jiazai</View>
@@ -33,12 +37,7 @@ class Index extends Component {
     console.log(this.props)
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <AtButton type='primary'>I need Taro UI</AtButton>
-        <Text>Taro UI 支持 Vue 了吗？</Text>
-        <AtButton type='primary' circle={true}>支持</AtButton>
-        <Text>共建？</Text>
-        <AtButton type='secondary' circle={true}>来</AtButton>
+        <Text>Hello home!</Text>
       </View>
     )
   }

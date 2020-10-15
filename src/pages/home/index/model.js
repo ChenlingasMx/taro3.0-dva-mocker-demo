@@ -10,10 +10,10 @@ export default {
                 *userLoginCode({ payload }, { call, put }) {
                         const respones = yield call(userLoginCode, payload);
                         if(respones.error==0){
-                                yield put({
-                                        type: 'save',
-                                        payload: { userInfo:respones.result.userInfo}
-                                    });
+                            yield put({
+                                type: 'save',
+                                payload: { userInfo:respones.result.userInfo}
+                            });
                         }
                 }
         },

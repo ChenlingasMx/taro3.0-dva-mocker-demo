@@ -1,5 +1,5 @@
 export default {
-        namespace: 'index',
+        namespace: 'Im',
         state: {
             test:'test'
         },

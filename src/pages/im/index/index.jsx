@@ -1,29 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { View, Text } from '@tarojs/components'
 import {connect} from 'react-redux'
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 import './index.scss'
 
-class Index extends Component {
-
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    console.log(this.props)
+const Im =()=>  {
     return (
       <View className='index'>
-        <Text>Hello IM!</Text>
+        <Text>欢迎聊天</Text>
       </View>
     )
-  }
 }
 
-export default connect(({index})=>({index}))(Index);
+export default connect(({index})=>({index}))(Im);

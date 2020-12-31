@@ -1,11 +1,7 @@
 # taro3+dva+taro-request
 
 #### 介绍
-网上全市taro3.0之前的dva集成版本，今天花时间集成一套taro3+dva+taro.request非TS版本
-
-#### 软件架构
-软件架构说明
-
+taro3+dva+taro.request非TS版本
 
 #### 安装教程
 1.Taro脚手架
@@ -20,6 +16,5 @@ $ cnpm install -g @tarojs/cli
 
 3.npm install 或者 cnpm install
 
-#### 使用说明
+4. npm run dev:weapp
 
-有dva或umi使用经验的可以开心的使用啦！

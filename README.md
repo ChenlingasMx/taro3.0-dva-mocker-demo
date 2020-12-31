@@ -16,5 +16,5 @@ $ cnpm install -g @tarojs/cli
 
 3.npm install 或者 cnpm install
 
-4. npm run dev:weapp
+4.npm run dev:weapp
 

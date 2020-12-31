@@ -1,29 +1,20 @@
-import Taro from "@tarojs/taro"
-import React, { useEffect } from 'react'
-import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import React from 'react'
+import { View } from '@tarojs/components'
+import { AtGrid ,AtNoticebar} from 'taro-ui'
 import { connect } from 'react-redux'
-import sysConfig from '@/config'
-import "taro-ui/dist/style/components/button.scss" // 按需引入
+import "taro-ui/dist/style/components/grid.scss" // 按需引入
+import "taro-ui/dist/style/components/noticebar.scss" // 按需引入
 import './index.scss'
+import SwiperCompanent from './Swiper'
 
-const Home = () => {
-  useEffect(() => {
-    props.dispatch({
-      type: 'index/userLoginCode',
-      payload: {
-        phone: '13812457277',
-        code: '0990'
-      }
-    })
-  }, [])
-  const goto = () => {
-    Taro.navigateTo({ url: '/pages/account/login/index' })
-  }
+const Home = (props) => {
+  const {index:{data}} = props
   return (
-      <View className='index'>
-        <Text>欢迎来到首页</Text>
-      </View>
+    <View>
+      <SwiperCompanent />
+      <AtNoticebar marquee>欢迎来到首页</AtNoticebar>
+      <AtGrid data={data} />
+    </View>
   )
 }
 

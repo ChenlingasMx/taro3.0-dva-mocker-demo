@@ -15,6 +15,10 @@ $ cnpm install -g @tarojs/cli
 2.git clone 源码
 
 3.npm install 或者 cnpm install
-
-4. npm run dev:weapp
+  npm run dev:weapp 
+  npm run dev:tt
+  npm run dev:h5
+  npm run dev:rn
+  npm run dev:qq
+  npm run dev:jd
 

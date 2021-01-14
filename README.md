@@ -1,7 +1,7 @@
-# taro3+dva+taro-request
+# taro3+dva+taro+taro-request+mocker
 
 #### 介绍
-taro3+dva+taro.request+mocker.js 非TS版本
+一个简单的taro3+dva+taro.request+mocker.js例子 非TS版本
 
 #### 安装教程taro脚手架
 ```bash

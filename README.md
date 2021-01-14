@@ -1,7 +1,7 @@
 # taro3+dva+taro-request
 
 #### 介绍
-taro3+dva+taro.request非TS版本
+taro3+dva+taro.request+mocker.js 非TS版本
 
 #### 安装教程taro脚手架
 ```bash
@@ -11,6 +11,9 @@ $ npm install -g @tarojs/cli
 $ yarn global add @tarojs/cli
  OR 安装了 cnpm，使用 cnpm 安装 CLI
 $ cnpm install -g @tarojs/cli
+2.安装dva,详细搭件可查询dva.js文档
+$  npm install --save dva-core dva-loading
+$  npm install --save redux react-redux redux-thunk redux-logger
 ```
 #### 运行
 ```bash

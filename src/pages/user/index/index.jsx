@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { AtTabs, AtTabsPane } from 'taro-ui'
 import "taro-ui/dist/style/components/tabs.scss";
 import {connect} from 'react-redux'
@@ -7,7 +7,16 @@ import TabTwo from './Tabs/TabTwo'
 import TabThree from './Tabs/TabThree'
 import './index.scss'
 
-const Users = () => {
+const Users = (props) => {
+  useEffect(()=>{
+    props.dispatch({
+      type:"user/getList",
+      payload:{
+        page:1,
+        pageSize:20
+      }
+    })
+  })
   const [ current,setCurrent] = useState(0)
   const tabList = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
   const handleClick = (value) => {
@@ -28,4 +37,4 @@ const Users = () => {
     )
 }
 
-export default connect(({index})=>({index}))(Users);
+export default connect(({user})=>({user}))(Users);

@@ -17,7 +17,7 @@ $  npm install --save redux react-redux redux-thunk redux-logger
 ```
 #### 运行
 ```bash
-  npm install
+  yarn install
   npm run dev:weapp 
   npm run dev:tt
   npm run dev:h5

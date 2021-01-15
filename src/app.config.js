@@ -22,6 +22,12 @@ export default {
         pagePath:'pages/user/index/index',
         iconPath:"./utils/img/user.png",
         selectedIconPath:"./utils/img/user.png"
+      },
+      {
+        text:'登陆',
+        pagePath:'pages/account/login/index',
+        iconPath:"./utils/img/user.png",
+        selectedIconPath:"./utils/img/user.png"
       }
     ]
   },

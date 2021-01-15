@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import dva from './dva';
 import models from './models';
+import Tabbar from './component/Tabbar'
 //import './app.scss'
 const dvaApp = dva.createApp({
     initialState: {},
@@ -25,6 +26,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 {this.props.children}
+                <Tabbar />
             </Provider>
         )
     }

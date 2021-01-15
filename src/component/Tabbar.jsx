@@ -34,15 +34,17 @@ class Tabbar extends Component {
   }
   render() {
     return (
-      <AtTabBar
-        current={this.state.current}
-        fixed
-        onClick={this.handleAtTabBarClick}
-        tabList={[
-          { title: '首页', iconType: 'bullet-list', text: 'new' },
-          { title: '个人中心', iconType: 'user' }
-        ]}
-      />
+      <>
+        <AtTabBar
+          current={this.state.current}
+          fixed
+          onClick={this.handleAtTabBarClick}
+          tabList={[
+            { title: '首页', iconType: 'home' },
+            { title: '个人中心', iconType: 'user' }
+          ]}
+        />
+      </>
     )
   }
 }

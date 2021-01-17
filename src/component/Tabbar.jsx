@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro'
 import { AtTabBar } from 'taro-ui'
 import "taro-ui/dist/style/components/tab-bar.scss";
 import "taro-ui/dist/style/components/badge.scss";
-
+// Tabbar组件
 class Tabbar extends Component {
   constructor(props) {
     super(props)

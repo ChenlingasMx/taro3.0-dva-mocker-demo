@@ -1,4 +1,4 @@
-import React, { } from 'react'
+import React, { useEffect } from 'react'
 import { View } from '@tarojs/components'
 import { AtList, AtListItem } from 'taro-ui'
 import "taro-ui/dist/style/components/list.scss";
@@ -6,7 +6,16 @@ import "taro-ui/dist/style/components/icon.scss";
 import { connect } from 'react-redux'
 
 const TabOne = (props) => {
-  const {user:{sourceList}} = props
+  const {user:{sourceList,page,pageSize}} = props
+  useEffect(() => {
+    props.dispatch({
+      type: "user/getList",
+      payload: {
+        page: page,
+        pageSize: pageSize
+      }
+    })
+  })
   return (
     <View>
       <AtList>

@@ -17,7 +17,6 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
-    console.log(this.props)
     return (
       <View className='index'>
         <Text>Hello login!</Text>

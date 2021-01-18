@@ -5,8 +5,10 @@ import { HTTP_STATUS } from './config'
 const customInterceptor = (chain) => {
 
   const requestParams = chain.requestParams
-
   return chain.proceed(requestParams).then(res => {
+    // if(res.statusCode===200&&res.data){
+    //   return res.data;
+    // }
     // 只要请求成功，不管返回什么状态码，都走这个回调
     if (res.statusCode === HTTP_STATUS.NOT_FOUND) {
       return Promise.reject("请求资源不存在")
@@ -26,9 +28,8 @@ const customInterceptor = (chain) => {
       return Promise.reject("需要鉴权")
 
     } else if (res.statusCode === HTTP_STATUS.SUCCESS) {
-      const error = res.data.error.toString();
-      const msg = res.data.message.toString();
-
+      const error = res&&res.data&&res.data.error&&res.data.error.toString();
+      const msg = res&&res.data&&res.data.message&&res.data.message.toString();
       if (res.data.tokens) {
         try {
           Taro.setStorageSync('xAuthToken', response.data.tokens.token + ' ' + response.data.tokens.refesh_token);
@@ -50,6 +51,9 @@ const customInterceptor = (chain) => {
           //Taro.showToast({ title: '登录信息删除失败', icon: "none" })
         }
         return;
+      }
+      if(!error){
+        return res.data
       }
       //弹出错误信息
       Taro.showToast({ title: msg, icon: "none" })

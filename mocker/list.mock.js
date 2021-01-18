@@ -2,12 +2,10 @@ const list = [];
 for (let i = 1; i < 101; i++) {
     list.push({
         id: i,
-        carNumber: '云AC2691',
-        start: '浙江省衢州市常山众卡产业园-杭州x商场',
-        end: '北京天安门向东500米',
-        orderId: 'LIH202006056359',
-        createTime: '2020-06-08 23:40:00',
-        status: '待审核',
+        title: '王一博同款',
+        note: '王一博同款-杭州x商场',
+        extraText: '详情',
+        详情: 'sketch',
     });
 }
 

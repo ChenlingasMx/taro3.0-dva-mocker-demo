@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 const TabThree = () => {
     return (
       <View>
-        <Text>11111111111</Text>
+        <Text>我的页面</Text>
       </View>
     )
 }

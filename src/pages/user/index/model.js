@@ -1,5 +1,5 @@
 import { getList } from '../../../servers/user'
-import image1 from '../../../utils/img/700x525_17c64c0a756155c557a6eaca316ddecb.jpeg'
+import image1 from '../../../utils/img/1000.png'
 
 export default {
     namespace: 'user',
@@ -21,21 +21,6 @@ export default {
         page: 1,
         pageSize: 20,
         searchValue:'',// 搜索
-        // 表单
-        form:{
-            account:"",
-            passWord:""
-        },
-        // 表单验证
-        formError:{
-            accountError:false,
-            passWordError:false
-        },
-        // 表单正则
-        formRegu:{
-            accountRegu: undefined,
-            passwordRegu:/(?:^[1-9]([0-9]+)?(?:\.[0-9]{1,2})?$)|(?:^(?:0){1}$)|(?:^[0-9]\.[0-9](?:[0-9])?$)/,
-        }
     },
     effects: {
         *getList(_, { call, put, select }) {

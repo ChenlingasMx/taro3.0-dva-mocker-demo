@@ -9,7 +9,7 @@ import './index.scss'
 
 const Users = () => {
   const [current, setCurrent] = useState(0)
-  const tabList = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
+  const tabList = [{ title: '商品列表' }, { title: '表单' }, { title:'我的' }]
   const handleClick = (value) => {
     setCurrent(value)
   }

@@ -5,27 +5,26 @@ import "taro-ui/dist/style/components/list.scss";
 import "taro-ui/dist/style/components/icon.scss";
 import "taro-ui/dist/style/components/search-bar.scss";
 import "taro-ui/dist/style/components/button.scss";
-import "taro-ui/dist/style/components/icon.scss";
 import { connect } from 'react-redux'
 
 class TabOne extends Component {
-  state = {
-    value: ''
-  }
   componentDidMount() {
     this.props.dispatch({ type: "user/getList" })
   }
   onChange(value) {
-    this.setState({
-      value: value
+    this.props.dispatch({
+      type:"user/updateData",
+      payload:{
+        searchValue:value
+      }
     })
   }
   render() {
-    const { user: { sourceList } } = this.props
+    const { user: { sourceList,searchValue } } = this.props
     return (
       <View>
         <AtSearchBar
-          value={this.state.value}
+          value={searchValue}
           onChange={this.onChange.bind(this)}
         />
         <AtList>
@@ -37,7 +36,7 @@ class TabOne extends Component {
                 note={itm.note}
                 arrow='right'
                 extraText={itm.extraText}
-                iconInfo={{ size: 25, color: '#78A4FA', value: itm.icon, }}
+                thumb={itm.img}
               />
             )
           })}

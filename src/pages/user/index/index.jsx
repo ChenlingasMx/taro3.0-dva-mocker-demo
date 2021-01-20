@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef } from 'react'
 import { AtTabs, AtTabsPane } from 'taro-ui'
 import "taro-ui/dist/style/components/tabs.scss";
 import { connect } from 'react-redux'
@@ -9,7 +9,7 @@ import './index.scss'
 
 const Users = () => {
   const [current, setCurrent] = useState(0)
-  const tabList = [{ title: '商品列表' }, { title: '表单' }, { title:'我的' }]
+  const tabList = [{ title: '商品列表' }, { title: 'form表单' }, { title: '我的' }]
   const handleClick = (value) => {
     setCurrent(value)
   }
@@ -27,5 +27,5 @@ const Users = () => {
     </AtTabs>
   )
 }
-
-export default connect(({ user }) => ({ user }))(Users);
+const UserConnect = connect(({ user }) => ({ user }))(Users)
+export default forwardRef((props, ref) => <UserConnect {...props} refInstance={ref} />);

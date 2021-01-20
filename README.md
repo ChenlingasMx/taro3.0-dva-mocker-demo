@@ -1,7 +1,8 @@
 # taro3+dva+taro+taro-request+mocker
-
+[![Build With Taro](https://img.shields.io/badge/build%20with-Taro-028fe4.svg?style=flat-square)](https://github.com/NervJS/taro/)
+[![Build With dva](https://img.shields.io/badge/build%20with-dva-028fe4.svg?style=flat-square)](https://dvajs.com/)
 #### 介绍
-一个简单的taro3+dva+taro.request+mocker.js例子 非TS版本
+一个基于 React + Taro + Dva + mocker构建的适配不同端（微信/百度/支付宝小程序、H5、React-Native 等）的小程序demo 非TS版本
 
 #### 安装教程taro脚手架
 ```bash

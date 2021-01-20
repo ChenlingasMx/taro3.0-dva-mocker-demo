@@ -1,5 +1,5 @@
 import React, { } from 'react'
-import { AtForm, AtInput, AtButton, AtInputNumber, AtCheckbox } from 'taro-ui'
+import { AtForm, AtInput, AtButton, AtInputNumber, AtCheckbox ,AtRadio ,AtSwitch ,AtTextarea} from 'taro-ui'
 import "taro-ui/dist/style/components/form.scss";
 import "taro-ui/dist/style/components/input.scss";
 import "taro-ui/dist/style/components/icon.scss";
@@ -7,6 +7,8 @@ import "taro-ui/dist/style/components/button.scss";
 import "taro-ui/dist/style/components/loading.scss";
 import "taro-ui/dist/style/components/input-number.scss";
 import "taro-ui/dist/style/components/checkbox.scss";
+import "taro-ui/dist/style/components/radio.scss";
+import "taro-ui/dist/style/components/switch.scss";
 import { View } from '@tarojs/components'
 
 /*
@@ -60,6 +62,39 @@ const FromContent = ({
                 name={itm.name}
                 title={itm.title}
                 selectedList={itm.value}
+                {...itm.attrubites}
+              />
+            )
+          }
+          if (itm.type === 'radio') {
+            return (
+              <AtRadio
+                key={index}
+                name={itm.name}
+                title={itm.title}
+                value={itm.value}
+                {...itm.attrubites}
+              />
+            )
+          }
+          if (itm.type === 'switch') {
+            return (
+              <AtSwitch
+                key={index}
+                name={itm.name}
+                title={itm.title}
+                checked={itm.value}
+                {...itm.attrubites}
+              />
+            )
+          }
+          if (itm.type === 'textarea') {
+            return (
+              <AtTextarea
+                key={index}
+                name={itm.name}
+                title={itm.title}
+                value={itm.value}
                 {...itm.attrubites}
               />
             )
